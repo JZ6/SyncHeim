@@ -5,8 +5,11 @@ from pathlib import Path
 
 user_home = Path.home()
 valheim_dir = Path(user_home,'AppData','LocalLow','IronGate','Valheim')
+wsl_to_win = {
+	'/home/sushinocode': '/mnt/c/Users/thesu/'
+}
 if not valheim_dir.exists():
-	valheim_dir = Path('/mnt/c/Users/thesu/', 'AppData', 'LocalLow', 'IronGate', 'Valheim')
+	valheim_dir = Path(wsl_to_win[str(user_home)], 'AppData', 'LocalLow', 'IronGate', 'Valheim')
 
 def to_local(world_name):
 	pass
